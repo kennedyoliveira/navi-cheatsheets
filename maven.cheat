@@ -1,0 +1,45 @@
+% mvn, dependency
+
+# Show the dependency tree
+mvn dependency:tree
+
+
+
+% mvn, dependency
+
+# Show the dependency tree with include filter: [groupId]:[artifactId]:[type]:[version]
+mvn dependency:tree -Dincludes=<filter>
+
+
+
+% mvn, common
+
+# Clean, package, force refresh dependency updates
+mvn clean package -U
+
+
+
+% mvn, common
+
+# Clean, install, force refresh dependency updates
+mvn clean install -U
+
+
+
+% mvn, common
+
+# Run tests, force refresh dependency updates
+mvn clean verify -U
+
+% mvn, tests
+
+# Generate HTML report for surefire/surefail plugins
+
+mvn surefire-report:report-only
+
+
+% mvn, install
+
+# Install without tests
+
+mvn clean install -D skipTests

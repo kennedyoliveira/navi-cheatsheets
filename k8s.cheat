@@ -1,0 +1,8 @@
+% k8s
+
+# Delete pod stuck in "terminating" state
+
+kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
+
+$ PODNAME: kubectl get pods -A | awk '{print $2}' --- --header-lines 1
+$ NAMESPACE: kubectl get pods -A | grep "<PODNAME>" | awk '{print $1}'    
